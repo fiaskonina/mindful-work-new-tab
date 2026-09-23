@@ -2,6 +2,8 @@
 
 A gentle, human-centric pause in the middle of modern work, technology, and AI change.
 
+[👉 Try the live demo in your browser](https://fiaskonina.github.io/mindful-work-new-tab/)
+
 Created by **[Nina Santaniemi](https://fiaskonina.ai/about/)** | **[fiaskonina.ai](https://fiaskonina.ai)**
 
 ---
