@@ -1,0 +1,368 @@
+/* ==========================================================================
+RESET & PERUSMÄÄRITTELYT
+========================================================================== */
+
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html, body {
+height: 100%;
+}
+
+body {
+background-color: #FDF5E6; /* fiaskoninan pehmeä beige */
+color: #1A1A1A;
+font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding: 36px 48px;
+-webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+HEADER (PÄIVÄMÄÄRÄ & KIELIVALINTA)
+========================================================================== */
+.app-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+max-width: 960px;
+margin: 0 auto;
+}
+
+.date-badge {
+font-size: 11px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.14em;
+color: #8C8275; /* Lämmin, vaimea harmaanruskea beigen päällä */
+}
+
+.lang-switch {
+display: flex;
+align-items: center;
+gap: 6px;
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(8px);
+border: 1px solid rgba(26, 26, 26, 0.1);
+border-radius: 20px;
+padding: 4px 10px;
+transition: all 0.2s ease;
+}
+
+.lang-switch:hover {
+background: #FFFFFF;
+border-color: rgba(26, 26, 26, 0.2);
+}
+
+.lang-btn {
+background: none;
+border: none;
+font-family: 'Sora', sans-serif;
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 0.05em;
+color: #999999;
+cursor: pointer;
+padding: 2px 4px;
+transition: color 0.15s ease;
+}
+
+.lang-btn:hover {
+color: #1A1A1A;
+}
+
+.lang-btn.active {
+color: #2A4DFF; /* fiaskoninan sähkönsininen */
+font-weight: 700;
+}
+
+.lang-divider {
+font-size: 10px;
+color: #D1C7B7;
+}
+
+/* ==========================================================================
+PÄÄALUE & LOGOLINKKI
+========================================================================== */
+.container {
+max-width: 920px;
+width: 100%;
+margin: auto auto;
+text-align: center;
+padding: 20px 0;
+}
+
+.brand-section {
+margin-bottom: 24px;
+}
+
+#brandLogoLink {
+display: inline-block;
+text-decoration: none;
+transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#brandLogoLink:hover {
+opacity: 0.85;
+transform: translateY(-1px);
+}
+
+.brand-logo {
+width: 155px;
+height: auto;
+display: inline-block;
+}
+
+.main-title {
+font-family: 'Lora', Georgia, serif;
+font-size: 2.2rem;
+font-weight: 500;
+letter-spacing: -0.02em;
+line-height: 1.25;
+color: #1A1A1A;
+margin-bottom: 10px;
+}
+
+.sub-title {
+font-size: 14px;
+font-weight: 400;
+color: #736B5E;
+line-height: 1.5;
+margin-bottom: 40px;
+}
+
+/* ==========================================================================
+NÄKYMIEN VAIHDOT & ANIMAATIOT
+========================================================================== */
+.view-section {
+display: none;
+opacity: 0;
+transform: translateY(8px);
+transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.view-section.active {
+display: block;
+opacity: 1;
+transform: translateY(0);
+}
+
+/* ==========================================================================
+TILANAPIT: RAUHALLINEN KORTTIRUUDUKKO
+========================================================================== */
+.state-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+max-width: 880px;
+margin: 0 auto;
+}
+
+.state-btn {
+background-color: #FFFFFF;
+border: 1px solid rgba(26, 26, 26, 0.12);
+border-radius: 14px;
+padding: 18px 20px;
+min-height: 74px; /* Takaa saman korkeuden riippumatta tekstirivien määrästä */
+font-family: 'Sora', sans-serif;
+font-size: 13.5px;
+font-weight: 600;
+color: #2D2D2D;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+text-align: left;
+gap: 14px;
+line-height: 1.35;
+transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+user-select: none;
+}
+
+.state-btn:hover {
+background-color: #FFFFFF;
+border-color: #2A4DFF;
+color: #2A4DFF;
+transform: translateY(-2px);
+box-shadow: 0 8px 20px -4px rgba(42, 77, 255, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.state-btn:active {
+transform: translateY(0);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.state-icon {
+font-size: 20px;
+flex-shrink: 0;
+}
+
+/* ==========================================================================
+COACHING VASTAUSKORTTI: SEESTEINEN EDITORIAL-ILME
+========================================================================== */
+.quote-card {
+background-color: #FFFFFF;
+border: 1px solid rgba(26, 26, 26, 0.12);
+border-radius: 20px;
+padding: 56px 52px;
+box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+text-align: left;
+max-width: 760px;
+margin: 0 auto;
+}
+
+.card-badge-row {
+margin-bottom: 28px;
+}
+
+.state-pill {
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: #666666;
+background-color: #F8F6F0;
+border: 1px solid rgba(26, 26, 26, 0.08);
+padding: 6px 14px;
+border-radius: 99px;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+.coaching-quote {
+font-family: 'Lora', Georgia, serif;
+font-size: 1.85rem;
+font-style: italic;
+font-weight: 400;
+line-height: 1.48;
+color: #1A1A1A;
+margin-bottom: 40px;
+letter-spacing: -0.01em;
+}
+
+.card-actions {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+/* Ensisijainen toiminto: hillitty tumma painike */
+.action-btn-secondary {
+background-color: #1A1A1A;
+color: #FFFFFF;
+font-family: 'Sora', sans-serif;
+font-size: 13px;
+font-weight: 600;
+border: 1px solid #1A1A1A;
+border-radius: 30px;
+padding: 12px 24px;
+box-shadow: 0 2px 8px rgba(26, 26, 26, 0.12);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.action-btn-secondary:hover {
+background-color: #2A4DFF;
+border-color: #2A4DFF;
+transform: translateY(-1px);
+box-shadow: 0 6px 18px rgba(42, 77, 255, 0.25);
+}
+
+.action-btn-secondary:active {
+transform: translateY(0);
+}
+
+/* Toissijainen toiminto: hienovarainen tekstipainike */
+.action-btn-subtle {
+background: none;
+border: none;
+font-family: 'Sora', sans-serif;
+font-size: 13px;
+font-weight: 500;
+color: #777777;
+cursor: pointer;
+padding: 8px 12px;
+border-radius: 8px;
+transition: all 0.15s ease;
+}
+
+.action-btn-subtle:hover {
+color: #1A1A1A;
+background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* ==========================================================================
+FOOTER
+========================================================================== */
+.app-footer {
+text-align: center;
+width: 100%;
+}
+
+.footer-note {
+font-size: 12.5px;
+color: #8C8275;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+}
+
+.footer-note a {
+color: #1A1A1A;
+font-weight: 600;
+text-decoration: underline;
+text-decoration-color: rgba(26, 26, 26, 0.2);
+text-underline-offset: 4px;
+transition: all 0.15s ease;
+}
+
+.footer-note a:hover {
+color: #2A4DFF;
+text-decoration-color: #2A4DFF;
+}
+
+.dot {
+color: #CFC5B6;
+}
+
+/* ==========================================================================
+RESPONSIIVISUUS
+========================================================================== */
+@media (max-width: 820px) {
+body {
+padding: 24px 20px;
+}
+.state-grid {
+grid-template-columns: 1fr;
+gap: 10px;
+}
+.state-btn {
+min-height: auto;
+padding: 14px 18px;
+}
+.main-title {
+font-size: 1.75rem;
+}
+.quote-card {
+padding: 36px 28px;
+}
+.coaching-quote {
+font-size: 1.4rem;
+}
+.card-actions {
+flex-direction: column;
+align-items: stretch;
+gap: 12px;
+}
+.action-btn-subtle {
+text-align: center;
+}
+}

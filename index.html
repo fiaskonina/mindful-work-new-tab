@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fiaskonina</title>
+  <!-- Google Fonts: Lora & Sora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400;1,500&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="header-left">
+      <span id="currentDate" class="date-badge"></span>
+    </div>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Kielivalinta">
+        <button id="langFi" class="lang-btn active">FI</button>
+        <span class="lang-divider">|</span>
+        <button id="langEn" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="brand-section">
+      <a id="brandLogoLink" href="https://fiaskonina.ai/fi/" target="_blank" rel="noopener noreferrer" title="fiaskonina.ai">
+        <img src="logo.webp" alt="fiaskonina" class="brand-logo">
+      </a>
+    </div>
+
+    <!-- TILA A: Kysymys ja 6 tilakorttia -->
+    <section id="selectionView" class="view-section active">
+      <h1 id="mainTitle" class="main-title">Miltä sinusta tuntuu tänään?</h1>
+      <p id="mainSubtitle" class="sub-title">Pieni inhimillinen pysähdys työn, teknologian ja arjen keskellä.</p>
+
+      <div class="state-grid" id="stateButtonsContainer">
+        <!-- Generoidaan dynaamisesti JS:llä -->
+      </div>
+    </section>
+
+    <!-- TILA B: Valitun tilan coaching-vastaus -->
+    <section id="promptView" class="view-section">
+      <div class="quote-card">
+        <div class="card-badge-row">
+          <span id="selectedStateBadge" class="state-pill"></span>
+        </div>
+        
+        <p id="quoteText" class="coaching-quote"></p>
+        
+        <div class="card-actions">
+          <button id="btnNewQuote" class="action-btn-secondary">
+            <span id="txtNewQuote">Arvo toinen näkökulma</span>
+          </button>
+          <button id="btnResetState" class="action-btn-subtle">
+            <span id="txtResetState">← Valitse toinen tila</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p class="footer-note">
+      <span id="footerAuthor">Tehnyt: Nina Santaniemi</span>
+      <span class="dot">•</span>
+      <a id="footerSiteLink" href="https://fiaskonina.ai/fi/" target="_blank" rel="noopener noreferrer">fiaskonina.ai</a>
+      <span class="dot">•</span>
+      <span id="footerMotto">Muutos voitetaan ihmisten kanssa</span>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
