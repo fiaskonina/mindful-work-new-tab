@@ -1,4 +1,4 @@
-# fiaskonina — Mindful Work & AI New Tab
+# fiaskonina - Mindful Work & AI New Tab
 
 A gentle, human-centric pause in the middle of modern work, technology, and AI change.
 
